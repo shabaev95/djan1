@@ -9,3 +9,5 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
     pass
+
+# Я что, коммичу через чужой аккаунт?
