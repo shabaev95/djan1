@@ -9,9 +9,12 @@ class Address(models.Model):
 
     house = models.CharField(max_length=50)
 
-    flat = models.IntegerField(max_length=10)
+    flat = models.IntegerField(max_length=10, null=True, blank=True)
 
     zip_code = models.IntegerField(max_length=20)
+
+    def __str__(self):
+        return f'{self.house} {self.street} {self.city}'
 
 
 class Contact(models.Model):
