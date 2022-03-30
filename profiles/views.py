@@ -7,11 +7,9 @@ from .serializers import ProfileSerializer
 from ..users.models import CustomUser
 from ..users.serializers import StatusSerializer
 
-
 class ProfilesViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-
 
 class ProfileStatusViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()

@@ -1,7 +1,5 @@
 from django.db import models
-
 from ..users.models import CustomUser
-
 
 class Photos(models.Model):
     small = models.CharField(max_length=8000)
@@ -12,7 +10,6 @@ class Photos(models.Model):
 
     def __str__(self):
         return f'Photos {self.pk}'
-
 
 class Contacts(models.Model):
     github = models.CharField(max_length=1000, null=True, blank=True)
