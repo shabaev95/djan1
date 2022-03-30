@@ -1,9 +1,15 @@
 from rest_framework import serializers
- from users.models import CustomUser, Photos
+from users.models import CustomUser, Photos
 
 
- class PhotosSerializer(serializers.ModelSerializer):
-     class Meta:
+class StatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['status']
+
+
+class PhotosSerializer(serializers.ModelSerializer):
+    class Meta:
          model = Photos
          fields = '__all__'
 
