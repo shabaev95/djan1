@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from profiles.views import ProfilesViewSet, ProfileStatusViewSet
+from ..profiles.views import ProfilesViewSet, ProfileStatusViewSet
 
 router = routers.DefaultRouter()
 router.register(r'profile', ProfilesViewSet)

@@ -1,10 +1,11 @@
-from profiles.models import Profile
-from profiles.serializers import ProfileSerializer
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from users.models import CustomUser
-from users.serializers import StatusSerializer
+
+from .models import Profile
+from .serializers import ProfileSerializer
+from ..users.models import CustomUser
+from ..users.serializers import StatusSerializer
 
 
 class ProfilesViewSet(viewsets.ModelViewSet):
