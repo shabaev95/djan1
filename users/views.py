@@ -2,8 +2,8 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .models import CustomUser
-from .serializers import UserSerializer
+from users.models import CustomUser
+from users.serializers import UserSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()

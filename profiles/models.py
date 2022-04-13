@@ -1,5 +1,5 @@
 from django.db import models
-from ..users.models import CustomUser
+from users.models import CustomUser
 
 class Photos(models.Model):
     small = models.CharField(max_length=8000)

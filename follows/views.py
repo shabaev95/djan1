@@ -1,7 +1,7 @@
-from ..api.serializers import DualSerializerViewSet
-from .models import Follow
+from api.serializers import DualSerializerViewSet
+from follows.models import Follow
 
-from .serializers import FollowSerializer
+from follows.serializers import FollowSerializer
 
 
 class FollowViewSet(DualSerializerViewSet):

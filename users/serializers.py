@@ -1,7 +1,7 @@
-from ..profiles.serializers import PhotosSerializer, StatusSerializer
-from .models import CustomUser
+from profiles.serializers import PhotosSerializer, StatusSerializer
+from users.models import CustomUser
 from rest_framework import serializers
-from ..follows.models import Follow
+from follows.models import Follow
 
 class UserSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='first_name')

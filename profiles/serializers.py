@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..profiles.models import Profile, Contacts, Photos
+from profiles.models import Profile, Contacts, Photos
 
 class StatusSerializer(serializers.ModelSerializer):
     class Meta:

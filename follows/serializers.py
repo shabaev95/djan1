@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Follow
+from follows.models import Follow
 
 
 class FollowSerializer(serializers.ModelSerializer):

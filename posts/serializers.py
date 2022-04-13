@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from posts.models import Post, PostPhotos
-from profiles.models import Profile, Contacts, Photos
+#from profiles.models import Profile, Contacts, Photos
 
 
 class PostSerializer(serializers.ModelSerializer):
