@@ -46,8 +46,8 @@ class Query(graphene.ObjectType):
 
     def resolve_find_user(self, info, findBy, offset=None, limit=None):
         # Здесь достаём.
-        result = CustomUser.objects.filter(Q(username=findBy) | Q(first_name=findBy) | Q(last_name=findBy) |
-                                       Q(email=findBy) | Q(status=findBy))
+        result = CustomUser.objects.filter(Q(username__icontains=findBy) | Q(first_name__icontains=findBy) | Q(last_name__icontains=findBy) |
+                                       Q(email__icontains=findBy) | Q(status__icontains=findBy))
         if offset:
             result = result[offset:]
 
