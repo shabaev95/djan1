@@ -1,6 +1,8 @@
 import graphene
 from graphene_django import DjangoObjectType
 from .models import Profile, Photos, Contacts
+from users.models import CustomUser, Photos
+from django.db.models import Q
 
 
 class ProfileType(DjangoObjectType):
@@ -25,6 +27,10 @@ class Query(graphene.ObjectType):
     all_profiles = graphene.List(ProfileType)
     all_photos = graphene.List(PhotosType)
     all_contacts = graphene.List(ContactsType)
+    find_user = graphene.List(CustomUserType,
+                              findBy=graphene.String(required=True),
+                              offset=graphene.Int(required=False),
+                              limit=graphene.Int(required=False))
 
     def resolve_all_profiles(root, info):
         # Здесь достаём.
@@ -37,3 +43,15 @@ class Query(graphene.ObjectType):
     def resolve_all_contacts(root, info):
         # Здесь достаём.
         return Contacts.objects.all()
+
+    def resolve_find_user(self, info, findBy, offset=None, limit=None):
+        # Здесь достаём.
+        result = CustomUser.objects.filter(Q(username=findBy) | Q(first_name=findBy) | Q(last_name=findBy) |
+                                       Q(email=findBy) | Q(status=findBy))
+        if offset:
+            result = result[offset:]
+
+        if limit:
+            result = result[:limit]
+
+        return result
